@@ -20,14 +20,11 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
 
-      - name: Sync with remote
+      - name: Force push to hub
         env:
+            HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git push https://Ali-Developments:$HF_TOKEN@huggingface.co/spaces/Ali-Developments/Alfred_LLM main --force
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git pull https://Ali-Developments:$HF_TOKEN@huggingface.co/spaces/Ali-Developments/Alfred_LLM main --rebase || true
-
-      - name: Push to hub
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: |
-          git push https://Ali-Developments:$HF_TOKEN@huggingface.co/spaces/Ali-Developments/Alfred_LLM main
+          git push https://Ali-Developments:$HF_TOKEN@huggingface.co/spaces/Ali-Developments/Alfred_LLM main --force
