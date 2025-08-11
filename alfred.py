@@ -2,7 +2,7 @@
 import streamlit as st
 from langchain_core.messages import HumanMessage
 from tools import alfred  # Import your LangGraph agent
-
+#
 st.set_page_config(page_title="🕵️ Alfred - AI Assistant", page_icon="🎩")
 
 st.title("🎩 Alfred - Your AI Assistant")
@@ -25,3 +25,4 @@ if user_input:
 for msg in st.session_state.chat_history:
     role = "🤵 Alfred" if msg.type == "ai" else "🧑 You"
     st.chat_message(role).markdown(msg.content)
+
