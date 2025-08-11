@@ -26,5 +26,4 @@ jobs:
         run: |
           git push https://Ali-Developments:$HF_TOKEN@huggingface.co/spaces/Ali-Developments/Alfred_LLM main --force
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: |
-          git push https://Ali-Developments:$HF_TOKEN@huggingface.co/spaces/Ali-Developments/Alfred_LLM main --force
+       
